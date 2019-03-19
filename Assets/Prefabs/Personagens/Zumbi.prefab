@@ -115,6 +115,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4941635705825534}
   - component: {fileID: 136125043392324924}
+  - component: {fileID: 95487663051876678}
+  - component: {fileID: 114166856576178168}
+  - component: {fileID: 54312855733421476}
   m_Layer: 0
   m_Name: Zumbi
   m_TagString: Inimigo
@@ -1297,7 +1300,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063500868937916}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.86602545, z: 0, w: 0.49999994}
   m_LocalPosition: {x: -25.02, y: 0, z: -10.610691}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1331,7 +1334,7 @@ Transform:
   - {fileID: 4907605347408658}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -120, z: 0}
 --- !u!4 &4962514885412186
 Transform:
   m_ObjectHideFlags: 1
@@ -1372,6 +1375,50 @@ Transform:
   m_Father: {fileID: 4016398349323206}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54312855733421476
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063500868937916}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
+--- !u!95 &95487663051876678
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063500868937916}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 69a526a296b75074db3310a32ab2ba19, type: 3}
+  m_Controller: {fileID: 9100000, guid: d71d28c54280e45438d4493e9e9a12d6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114166856576178168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1063500868937916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76952f369159649608ab68f64248e7ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jogador: {fileID: 0}
 --- !u!136 &136125043392324924
 CapsuleCollider:
   m_ObjectHideFlags: 1
