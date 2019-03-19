@@ -1300,8 +1300,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1063500868937916}
-  m_LocalRotation: {x: 0, y: -0.86602545, z: 0, w: 0.49999994}
-  m_LocalPosition: {x: -25.02, y: 0, z: -10.610691}
+  m_LocalRotation: {x: -0, y: -0.5304501, z: -0, w: 0.8477162}
+  m_LocalPosition: {x: -12.22, y: 0, z: -21.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4388596583815700}
@@ -1334,7 +1334,7 @@ Transform:
   - {fileID: 4907605347408658}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -120, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -64.07201, z: 0}
 --- !u!4 &4962514885412186
 Transform:
   m_ObjectHideFlags: 1
@@ -1418,7 +1418,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76952f369159649608ab68f64248e7ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jogador: {fileID: 0}
+  Jogador: {fileID: 0}
+  Velocidade: 5
 --- !u!136 &136125043392324924
 CapsuleCollider:
   m_ObjectHideFlags: 1
