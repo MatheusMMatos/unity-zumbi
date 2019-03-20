@@ -9,9 +9,13 @@ public class controlaJogador : MonoBehaviour {
 	public LayerMask mascaraChao;
 	public GameObject textoJogador;
 	public bool vivo = true;
+	private Rigidbody rgJogador;
+	private Animator anmtrJogador;
 
 	void Start() {
 		Time.timeScale = 1;
+		rgJogador = GetComponent<Rigidbody>();
+		anmtrJogador = GetComponent<Animator>();
 	}
 	// Update is called once per frame
 	void Update () {
@@ -26,10 +30,10 @@ public class controlaJogador : MonoBehaviour {
 		
 		// troca de ação(Parado, Correndo)
 		if (direcao != Vector3.zero){
-			GetComponent<Animator>().SetBool("Movendo", true);
+			anmtrJogador.SetBool("Movendo", true);
 		}else
 		{
-			GetComponent<Animator>().SetBool("Movendo", false);
+			anmtrJogador.SetBool("Movendo", false);
 		}
 
 		if (!vivo){
@@ -41,8 +45,8 @@ public class controlaJogador : MonoBehaviour {
 
 	// movimenta o jogador por segundo
 	void FixedUpdate() {
-		GetComponent<Rigidbody>().MovePosition(
-			GetComponent<Rigidbody>().position + 
+		rgJogador.MovePosition(
+			rgJogador.position + 
 			(direcao * Time.deltaTime * Velocidade));
 
 		Ray raio = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -58,7 +62,7 @@ public class controlaJogador : MonoBehaviour {
 			posicaoMira.y = transform.position.y;
 
 			Quaternion novaRotacao = Quaternion.LookRotation(posicaoMira) ;
-			GetComponent<Rigidbody>().MoveRotation(novaRotacao);
+			rgJogador.MoveRotation(novaRotacao);
 		}
 	}
 }

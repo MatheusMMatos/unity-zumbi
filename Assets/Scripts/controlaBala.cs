@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class controlaBala : MonoBehaviour {
 	public float Velocidade =20;
+	private Rigidbody rgBala;
+
+	void Start() {
+		rgBala = GetComponent<Rigidbody>();	
+	}
 	// Update is called once per frame
 	void FixedUpdate() {
-		GetComponent<Rigidbody>().MovePosition(
-			GetComponent<Rigidbody>().position + transform.forward * Velocidade * Time.deltaTime);
+		rgBala.MovePosition(rgBala.position + transform.forward * Velocidade * Time.deltaTime);
 	}
 
 	void OnTriggerEnter(Collider objtColisao) {
