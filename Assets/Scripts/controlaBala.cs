@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class controlaBala : MonoBehaviour {
-	public float Velocidade =20;
+	public float Velocidade = 20;
 	private Rigidbody rgBala;
 
 	void Start() {
