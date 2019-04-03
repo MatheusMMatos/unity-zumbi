@@ -11,8 +11,10 @@ public class controlaInimigo : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Jogador = GameObject.FindWithTag("Jogador");
+		
 		int geraZumbi = Random.Range(1,28);
 		transform.GetChild(geraZumbi).gameObject.SetActive(true);
+		
 		rgInimigo = GetComponent<Rigidbody>();
 		anmtrInimigo = GetComponent<Animator>();
 	}	
@@ -39,8 +41,7 @@ public class controlaInimigo : MonoBehaviour {
 	}
 
 	void AtacaJogador(){
-		Time.timeScale = 0;
-		Jogador.GetComponent<controlaJogador>().textoJogador.SetActive(true);
-		Jogador.GetComponent<controlaJogador>().vivo = false;
+		int dano = Random.Range(20,30);
+		Jogador.GetComponent<controlaJogador>().TomarDano(dano);
 	}
 }

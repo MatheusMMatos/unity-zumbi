@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\controlaBala.cs" />
      <Compile Include="Assets\Scripts\controlaCamera.cs" />
      <Compile Include="Assets\Scripts\controlaInimigo.cs" />
+     <Compile Include="Assets\Scripts\controlaInterface.cs" />
      <Compile Include="Assets\Scripts\controlaJogador.cs" />
      <Compile Include="Assets\Scripts\geradorInimigo.cs" />
      <None Include="Assets\Modelos3D\Personagens\Animacoes\Animacoes.txt" />

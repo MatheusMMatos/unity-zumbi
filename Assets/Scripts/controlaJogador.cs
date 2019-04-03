@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class controlaJogador : MonoBehaviour {
 	public float Velocidade = 10;
-	Vector3 direcao;
 	public LayerMask mascaraChao;
 	public GameObject textoJogador;
-	public bool vivo = true;
+	public int Vida = 100;
+	private Vector3 direcao;
 	private Rigidbody rgJogador;
 	private Animator anmtrJogador;
+	public controlaInterface scriptControlaInterface;
 
 	void Start() {
 		Time.timeScale = 1;
@@ -36,7 +37,7 @@ public class controlaJogador : MonoBehaviour {
 			anmtrJogador.SetBool("Movendo", false);
 		}
 
-		if (!vivo){
+		if (Vida <= 0){
 			if(Input.GetButtonDown("Fire1")){
 				SceneManager.LoadScene("game");
 			}
@@ -63,6 +64,17 @@ public class controlaJogador : MonoBehaviour {
 
 			Quaternion novaRotacao = Quaternion.LookRotation(posicaoMira) ;
 			rgJogador.MoveRotation(novaRotacao);
+		}
+	}
+
+	public void TomarDano(int dano){
+		Vida -= dano;
+		scriptControlaInterface.AtualizarSliderVida();
+		if(Vida <= 0){
+			// pausa jogo
+			Time.timeScale = 0;
+			// texto na tela aparece
+			textoJogador.SetActive(true);
 		}
 	}
 }
